@@ -15,7 +15,7 @@ const Navbar = () => {
                             <NavOptions />
                         </ul>
                     </div>
-                    <Link to={'/'} className="hover:cursor-default">
+                    <Link to={'/'} className="">
                         <img className="lg:w-16 md:w-14 w-10" src="../../public/image/logo.png" alt="" />
                     </Link>
                 </div>
@@ -23,10 +23,12 @@ const Navbar = () => {
                     <NavOptions />
                 </div>
                 <div className="navbar-end">
-                    <button className="flex gap-1 items-center cursor-pointer transition-all bg-[#E7717D] text-white px-6 py-2 rounded-lg border-[#AFD275] border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-[#AFD275] shadow-[#AFD275] active:shadow-none hover:font-bold">
-                        <IoIosLogIn size={20} />
-                        Log In
-                    </button>
+                    <Link to={'/logIn'}>
+                        <button className="flex gap-1 items-center cursor-pointer transition-all bg-[#E7717D] text-white px-6 py-2 rounded-lg border-[#AFD275] border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-[#AFD275] shadow-[#AFD275] active:shadow-none hover:font-bold">
+                            <IoIosLogIn size={20} />
+                            Log In
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

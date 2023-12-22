@@ -3,6 +3,8 @@ import {
 } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import MainHome from "../Layout/MainHome";
+import TAsk from "../Components/Pages/Task/TAsk";
+import LogIn from "../Components/Pages/Login/Login";
 
 export const router = createBrowserRouter([
     {
@@ -12,7 +14,15 @@ export const router = createBrowserRouter([
             {
                 path:'/',
                 element: <MainHome/> ,
-            }
+            },
+            {
+                path:'/manageTask',
+                element: <TAsk/> ,
+            },
+            {
+                path:'/logIn',
+                element: <LogIn/> ,
+            },
         ]
     },
 ]);

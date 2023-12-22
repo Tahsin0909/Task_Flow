@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SharedBtn from "../../Shared/SharedBtn/SharedBtn";
 
 const Banner = () => {
@@ -10,7 +11,10 @@ const Banner = () => {
                     <span className="text-[#E7717D]">Intuitive Task Management</span>
                 </h1>
                 <h3 className="lg:text-lg text-sm text-gray-400 lg:mb-4 mb-2">Unlock Your Potential: Streamline Tasks, Boost Efficiency, and Achieve More</h3>
-                <SharedBtn button={"Let's Explore"} />
+                <Link to={'/logIn'}>
+                    <SharedBtn button={"Let's Explore"} />
+                </Link>
+
             </div>
             <div>
                 <img src="https://i.ibb.co/V3zBw0s/image-removebg-preview-18-1.png" alt="" />
