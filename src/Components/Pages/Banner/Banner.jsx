@@ -2,8 +2,8 @@ import SharedBtn from "../../Shared/SharedBtn/SharedBtn";
 
 const Banner = () => {
     return (
-        <div className="flex md:flex-row flex-col items-center justify-between lg:pl-4 pl-1">
-            <div className="">
+        <div className="flex md:flex-row flex-col items-center justify-center md:justify-between lg:pl-4 pl-1">
+            <div data-aos="zoom-in">
                 <h1 className="lg:text-5xl md:text-2xl text-xl font-bold  mb-2">
                     <span className="text-[#E7717D]">Boost Productivity</span>
                     <br /> <span className="text-[#AFD275]">with</span> <br />
