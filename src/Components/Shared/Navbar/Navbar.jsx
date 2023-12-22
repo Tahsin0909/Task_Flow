@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { IoIosLogIn } from "react-icons/io";
 import NavOptions from "./NavOptions";
+import { useContext } from "react";
+import { AuthContext } from "../../ContextApi/ContextApi";
+import toast, { Toaster } from "react-hot-toast";
 const Navbar = () => {
+    const { AuthUser, LogOut } = useContext(AuthContext)
     return (
         <div>
             <div className="navbar">
@@ -23,14 +27,27 @@ const Navbar = () => {
                     <NavOptions />
                 </div>
                 <div className="navbar-end">
-                    <Link to={'/logIn'}>
-                        <button className="flex gap-1 items-center cursor-pointer transition-all bg-[#E7717D] text-white px-6 py-2 rounded-lg border-[#AFD275] border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-[#AFD275] shadow-[#AFD275] active:shadow-none hover:font-bold">
-                            <IoIosLogIn size={20} />
-                            Log In
-                        </button>
-                    </Link>
+                    {
+                        AuthUser ? <div className="flex items-center gap-4">
+                            <Link onClick={() => { LogOut(), toast.success('Log Out Successful') }}>
+                                <button className="flex gap-1 items-center cursor-pointer transition-all bg-[#E7717D] text-white px-6 py-2 rounded-lg border-[#AFD275] border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-[#AFD275] shadow-[#AFD275] active:shadow-none hover:font-bold">
+                                    <IoIosLogIn size={20} />
+                                    Log Out
+                                </button>
+                            </Link>
+                            <img className="md:w-12 w-10  rounded-full" src={AuthUser?.photoURL} alt="" />
+                        </div>
+                            :
+                            <Link to={'/logIn'}>
+                                <button className="flex gap-1 items-center cursor-pointer transition-all bg-[#E7717D] text-white px-6 py-2 rounded-lg border-[#AFD275] border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-[#AFD275] shadow-[#AFD275] active:shadow-none hover:font-bold">
+                                    <IoIosLogIn size={20} />
+                                    Log In
+                                </button>
+                            </Link>
+                    }
                 </div>
             </div>
+            <Toaster />
         </div>
     );
 };

@@ -14,7 +14,6 @@ const Banner = () => {
                 <Link to={'/logIn'}>
                     <SharedBtn button={"Let's Explore"} />
                 </Link>
-
             </div>
             <div>
                 <img src="https://i.ibb.co/V3zBw0s/image-removebg-preview-18-1.png" alt="" />

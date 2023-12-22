@@ -54,6 +54,7 @@ const ContextApi = ({ children }) => {
         const Unsubscribe = onAuthStateChanged(auth, (user) => {
             setAuthUser(user)
             if (user) {
+                console.log(user);
                 const UserInfo = {
                     email: user?.email
                 }
